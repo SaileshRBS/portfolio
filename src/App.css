@@ -1,0 +1,405 @@
+/* Modern Portfolio Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #F2F2F2;
+  --bg-white: #FFFFFF;
+  --text-primary: #232323;
+  --text-secondary: #666666;
+  --accent-primary: #38FF62;
+  --accent-hover: #2AE052;
+  --border-light: rgba(35, 35, 35, 0.1);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, var(--text-primary) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--text-primary) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Header */
+.header {
+  background: var(--bg-white);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: opacity 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Hero */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 30px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: var(--bg-white);
+  padding: 30px 20px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Sections */
+.section {
+  padding: 80px 0;
+}
+
+.section:nth-child(even) {
+  background: var(--bg-white);
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+/* Experience */
+.experience-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  background: var(--bg-white);
+  padding: 40px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-light);
+}
+
+.experience-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.company {
+  font-family: 'Courier New', monospace;
+  color: var(--accent-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.duration {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.achievements {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.achievements li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.achievements li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--bg-white);
+  padding: 40px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.project-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.tech-stack {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contact */
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--bg-white);
+  padding: 40px;
+  border: 1px solid var(--border-light);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card h3 {
+
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  margin-bottom: 15px;
+  color: var(--text-secondary);
+}
+
+.contact-action {
+  color: var(--accent-primary);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background: var(--text-primary);
+  color: var(--bg-white);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
+  .hero {
+    padding: 80px 0 60px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Education */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-card {
+  background: var(--bg-white);
+  padding: 40px;
+  border: 1px solid var(--border-light);
+  transition: transform 0.2s;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+}
+
+.education-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.institution {
+  font-family: 'Courier New', monospace;
+  color: var(--accent-primary);
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.education-card .duration {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.education-card p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
