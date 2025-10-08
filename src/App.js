@@ -10,7 +10,7 @@ const App = () => {
   };
 
   const handleEmailClick = () => {
-    window.location.href = 'mailto:saileshpoturi15@gmail.com';
+    window.location.href = 'mailto:saileshpotturi15@gmail.com';
   };
 
   const handleLinkedInClick = () => {
@@ -584,7 +584,7 @@ const App = () => {
               <div className="contact-card" onClick={handleEmailClick}>
                 <div className="contact-icon">📧</div>
                 <h3>Email</h3>
-                <p>saileshpoturi15@gmail.com</p>
+                <p>saileshpotturi15@gmail.com</p>
                 <span className="contact-action">Send Message</span>
               </div>
               
